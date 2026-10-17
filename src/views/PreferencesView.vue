@@ -1,0 +1,5 @@
+<script setup lang="ts">
+import { usePreferencesStore } from '../stores/preferences'
+const preferences = usePreferencesStore()
+</script>
+<template><section class="page narrow"><p class="eyebrow">A TU MANERA</p><h1>Preferencias</h1><p>Los cambios se guardan en este navegador.</p><div class="settings"><label class="check"><input type="checkbox" :checked="preferences.value.showCompleted" @change="preferences.update({ showCompleted: ($event.target as HTMLInputElement).checked })">Mostrar tareas completadas</label><label class="check"><input type="checkbox" :checked="preferences.value.compact" @change="preferences.update({ compact: ($event.target as HTMLInputElement).checked })">Filas compactas</label><label>Tareas por página<select :value="preferences.value.pageSize" @change="preferences.update({ pageSize: Number(($event.target as HTMLSelectElement).value) })"><option :value="3">3</option><option :value="5">5</option><option :value="10">10</option></select></label></div></section></template>

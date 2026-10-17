@@ -1,0 +1,36 @@
+{
+  "name": "project-desk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "packageManager": "npm@11.17.0",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint src --max-warnings 0",
+    "build": "npm run typecheck && npm run lint && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "vue": "3.5.44",
+    "vue-router": "4.6.4",
+    "pinia": "3.0.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "6.0.10",
+    "vite": "8.3.4",
+    "typescript": "5.9.3",
+    "vue-tsc": "3.3.13",
+    "vitest": "5.0.5",
+    "@vitest/coverage-v8": "5.0.5",
+    "@vue/test-utils": "2.5.1",
+    "jsdom": "30.1.3",
+    "eslint": "10.13.0",
+    "typescript-eslint": "8.71.2"
+  }
+}
