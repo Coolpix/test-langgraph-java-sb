@@ -13,7 +13,7 @@ function submit() {
 }
 </script>
 <template>
-  <div class="overlay"><section class="editor" role="dialog" aria-modal="true" aria-labelledby="editor-title">
+  <div class="overlay"><dialog open class="editor" aria-modal="true" aria-labelledby="editor-title">
     <h2 id="editor-title">{{ task ? 'Editar tarea' : 'Nueva tarea' }}</h2>
     <form @submit.prevent="submit">
       <label>Título<input v-model="draft.title" autofocus required maxlength="120"></label>
@@ -26,5 +26,5 @@ function submit() {
       <p v-if="error" role="alert" class="error">{{ error }}</p>
       <footer class="actions"><button type="button" class="secondary" @click="emit('cancel')">Cancelar</button><button type="submit">Guardar tarea</button></footer>
     </form>
-  </section></div>
+  </dialog></div>
 </template>
